@@ -96,4 +96,4 @@ require('lunarline').setup({
 ```
 
 # Issues
-If your statusline isn't correctly highlighted, run make sure lunarline is setup() after your colorscheme.
+If your statusline isn't correctly highlighted, make sure lunarline is setup() after your colorscheme.
