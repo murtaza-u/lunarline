@@ -23,7 +23,7 @@ end
 
 local function set(components)
     local trunc_req = require('lunarline.utils.trunc_width')
-    local netrw_icon = "פּ"
+    local filetree_icon = " פּ"
     local colors = {
         active = "%#active#",
         inactive = "%#inactive#",
@@ -32,8 +32,8 @@ local function set(components)
 
     function Set(focus)
         if focus == 'active' then
-            if vim.bo.filetype == 'netrw' then
-                return Set('netrw')
+            if vim.bo.filetype == 'netrw' or vim.bo.filetype == "NvimTree" then
+                return Set('filetree')
             end
 
             if trunc_req() then
@@ -55,8 +55,8 @@ local function set(components)
                     components.get_line_col and components.get_line_col() or "",
                 }, ' ')
             end
-        elseif focus == 'netrw' then
-            return colors.active .. netrw_icon .. " netrw"
+        elseif focus == 'filetree' then
+            return colors.inactive .. "" .. filetree_icon
         else
             return colors.inactive
         end
