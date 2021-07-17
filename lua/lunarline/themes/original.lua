@@ -25,6 +25,13 @@ return {
     },
     filename = {fg = colors.purple, bg = colors.black},
     git_branch = {fg = colors.green, bg = colors.black},
+    git_diff = {
+        bg = colors.black,
+        fg = {
+            added = colors.green,
+            removed = colors.red,
+        }
+    },
     active_clients = {fg = colors.yellow, bg = colors.black},
     lsp_diagnostics = {
         bg = colors.black,

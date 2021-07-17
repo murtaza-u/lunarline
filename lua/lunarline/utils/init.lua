@@ -1,6 +1,7 @@
 local all_components = {
     filename = 'filename',
     git_branch = 'git_branch',
+    git_diff = 'git_diff',
     active_clients = 'active_clients',
     diagnostics = 'lsp_diagnostics',
     cursor_position = 'cursor_position',
@@ -15,6 +16,8 @@ local function load_theme(tbl)
             highlight_special(value, 'Mode')
         elseif key == "lsp_diagnostics" then
             highlight_special(value, 'Diagnostics')
+        elseif key == "git_diff" then
+            highlight_special(value, 'Lines')
         else
             highlight_general(key, value)
         end
@@ -47,6 +50,7 @@ local function set(components)
                     get_mode(),
                     components.get_filename and components.get_filename(false) or "",
                     components.get_git_branch and components.get_git_branch() or "",
+                    components.get_git_diff and components.get_git_diff() or "",
                     colors.active,
                     '%=',
                     components.get_active_clients and components.get_active_clients() or "",
