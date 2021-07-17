@@ -5,7 +5,7 @@ local function get_parent_dir(cwd)
 end
 
 local function main(cwd)
-    if vim.fn.finddir('.git', cwd) == '.git' then
+    if vim.fn.finddir('.git', cwd) ~= '' then
         return true
     else
         cwd = get_parent_dir(cwd)
