@@ -100,8 +100,8 @@ require('lunarline').setup({
 
 
 # TODO
-- [] Git diff
-- [] python virtualenv
+- [ ] Git diff
+- [ ] python virtualenv
 
 
 # Issues
