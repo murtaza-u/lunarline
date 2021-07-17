@@ -9,6 +9,7 @@ Out of the box
 1. Fast, beautiful, Customizable
 2. Components:
     * git branch
+    * git diff
     * lsp diagnostics
     * active clients
     * file percentage
@@ -100,7 +101,7 @@ require('lunarline').setup({
 
 
 # TODO
-- [ ] Git diff
+- [x] Git diff
 - [ ] python virtualenv
 
 
