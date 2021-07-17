@@ -6,10 +6,13 @@ Out of the box
 
 
 ## ⭐Features
-* Written in lua
-* Fast
-* Looks beautiful
-* Customizable
+1. Fast, beautiful, Customizable
+2. Components:
+    * git branch
+    * lsp diagnostics
+    * active clients
+    * file percentage
+    * line column
 
 
 ## Requirements
@@ -94,6 +97,12 @@ require('lunarline').setup({
     }
 })
 ```
+
+
+# TODO
+- [] Git diff
+- [] python virtualenv
+
 
 # Issues
 If your statusline isn't correctly highlighted, make sure lunarline is setup() after your colorscheme.
