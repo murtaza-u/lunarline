@@ -1,7 +1,5 @@
 local function setup(config)
     config = config == nil and {} or config
-    local utils = require('lunarline.utils')
-    utils.load_options(config.options)
 
     if config == {} or (config.theme == nil and config.colors == nil) then
         config.colors = require('lunarline.themes.original')
@@ -15,7 +13,10 @@ local function setup(config)
             config.colors = require('lunarline.themes.original')
         end
     end
+    local utils = require('lunarline.utils')
     utils.load_theme(config.colors)
+    local components = utils.load_options(config.options)
+    utils.set(components)
 end
 
 return {

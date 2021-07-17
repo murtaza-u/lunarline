@@ -80,7 +80,7 @@ local function load_options(options)
             components[new_key] = require('lunarline.components.' .. key)
         end
     end
-    set(components)
+    return components
 end
 
-return {load_theme = load_theme, load_options = load_options}
+return {load_theme = load_theme, load_options = load_options, set = set}
