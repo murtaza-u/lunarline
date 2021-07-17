@@ -92,6 +92,13 @@ require('lunarline').setup({
         },
         filename = {fg = palette.purple, bg = palette.black},
         git_branch = {fg = palette.green, bg = palette.black, style = "bold"},
+        git_diff = {
+            bg = colors.black,
+            fg = {
+                added = colors.green,
+                removed = colors.red,
+            }
+        },
         active_clients = {fg = palette.yellow, bg = palette.black},
         lsp_diagnostics = {
             bg = palette.black,
