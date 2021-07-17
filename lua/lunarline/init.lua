@@ -13,10 +13,9 @@ local function setup(config)
             config.colors = require('lunarline.themes.original')
         end
     end
-    local utils = require('lunarline.utils')
+    local utils = require('lunarline.utils.load')
     utils.load_theme(config.colors)
-    local components = utils.load_options(config.options)
-    utils.set(components)
+    utils.load_statusline(config.options)
 end
 
 return {

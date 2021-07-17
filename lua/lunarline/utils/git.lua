@@ -16,4 +16,4 @@ local function main(cwd)
     end
 end
 
-return main
+return main(vim.fn.getcwd())
