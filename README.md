@@ -14,11 +14,20 @@ Out of the box
     * active clients
     * file percentage
     * line column
+* Option to disable components which you think are of little use to you.
 
 
 ## Requirements
 * Neovim >= 0.5
 * [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) (requires [patched font](https://www.nerdfonts.com/))
+
+
+# Goals
+* Asynchronously load heavy components of the statusline.
+* No external dependencies on other plugins for features like git branch, git diffs, virtual environment.
+* Maintain a boundary between features and speed.
+* All famous themes will be included with Lunarline.
+
 
 # Installation
 * packer
