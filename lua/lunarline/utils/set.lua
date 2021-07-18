@@ -8,6 +8,9 @@ local function set(components, filename_option)
 
     function Set(focus)
         local is_working_directory_same = require('lunarline.utils.working_dir')
+        local cursor_position = components.get_cursor_position and components.get_cursor_position() or ""
+        local line_col = components.get_line_col and components.get_line_col() or ""
+
         if focus == 'active' then
             local filetype = vim.bo.filetype
             if filetype == 'netrw' or filetype == "NvimTree" then
@@ -32,8 +35,8 @@ local function set(components, filename_option)
                     '%=',
                     components.get_active_clients and components.get_active_clients() or "",
                     components.get_diagnostics and components.get_diagnostics() or "",
-                    components.get_cursor_position and components.get_cursor_position() or "",
-                    components.get_line_col and components.get_line_col() or "",
+                    cursor_position,
+                    line_col,
                 }, ' ')
             end
         elseif focus == 'filetree' then
