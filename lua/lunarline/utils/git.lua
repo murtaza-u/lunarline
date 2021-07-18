@@ -4,7 +4,7 @@ local function get_parent_dir(cwd)
     return cwd:sub(1, i-1)
 end
 
-local function main(cwd)
+local function has_git_dir(cwd)
     if vim.fn.finddir('.git', cwd) ~= '' then
         return true
     else
@@ -12,9 +12,9 @@ local function main(cwd)
         if cwd == nil then
             return false
         else
-            return main(cwd)
+            return has_git_dir(cwd)
         end
     end
 end
 
-return main(vim.fn.getcwd())
+return has_git_dir(vim.fn.getcwd())
