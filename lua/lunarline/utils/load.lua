@@ -17,9 +17,9 @@ end
 
 local function load_statusline(options)
     local get_required_components = require('lunarline.utils.req_components')
-    local components = get_required_components(options)
+    local components, filename_option = get_required_components(options)
     local set = require('lunarline.utils.set')
-    set(components)
+    set(components, filename_option)
 end
 
 return {load_theme = load_theme, load_statusline = load_statusline}

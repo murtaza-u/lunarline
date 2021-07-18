@@ -1,4 +1,4 @@
-local function set(components)
+local function set(components, filename_option)
     local trunc_req = require('lunarline.utils.trunc_width')
     local filetree_icon = " פּ"
     local colors = {
@@ -19,15 +19,15 @@ local function set(components)
             if trunc_req() then
                 return table.concat({
                     components.get_mode(),
-                    components.get_filename and components.get_filename(true) or "",
+                    components.get_filename and components.get_filename(true, filename_option) or "",
                     components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
                 }, ' ')
             else
                 return table.concat({
                     components.get_mode(),
-                    components.get_filename and components.get_filename(false) or "",
+                    components.get_filename and components.get_filename(false, filename_option) or "",
                     components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
-                    components.get_git_diff and is_working_directory_same() and components.get_git_diff() or "",
+                    components.get_git_diff and vim.fn.filereadable(vim.fn.expand("%f")) == 1 and is_working_directory_same() and components.get_git_diff() or "",
                     colors.active,
                     '%=',
                     components.get_active_clients and components.get_active_clients() or "",

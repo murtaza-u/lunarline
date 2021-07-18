@@ -7,17 +7,24 @@ local all_components = {
     cursor_position = 'cursor_position',
     line_col = 'line_col',
 }
-local function req_components(options)
+
+local function main(options)
+    local filename_option = nil
     local is_git_repo = require('lunarline.utils.git')
     local components = {}
+    components.get_mode = require('lunarline.components.mode')
+
     for key, _ in pairs(all_components) do
+        if key == 'filename' then
+            filename_option = options[key]
+        end
         local new_key = "get_" .. key
         if options == nil then
             if (key == "git_diff" or key == "git_branch") and not is_git_repo then
                 goto continue
             end
             components[new_key] = require('lunarline.components.' .. key)
-        elseif options[key] == true or options[key] == nil then
+        elseif options[key] ~= false then
             if (key == "git_diff" or key == "git_branch") and not is_git_repo then
                 goto continue
             end
@@ -25,8 +32,8 @@ local function req_components(options)
         end
         ::continue::
     end
-    components.get_mode = require('lunarline.components.mode')
-    return components
+
+    return components, filename_option
 end
 
-return req_components
+return main
