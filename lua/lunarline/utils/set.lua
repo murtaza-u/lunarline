@@ -7,6 +7,7 @@ local function set(components)
     }
 
     function Set(focus)
+        local is_working_directory_same = require('lunarline.utils.working_dir')
         if focus == 'active' then
             if vim.bo.filetype == 'netrw' or vim.bo.filetype == "NvimTree" then
                 return Set('filetree')
@@ -16,14 +17,14 @@ local function set(components)
                 return table.concat({
                     components.get_mode(),
                     components.get_filename and components.get_filename(true) or "",
-                    components.get_git_branch and components.get_git_branch() or "",
+                    components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
                 }, ' ')
             else
                 return table.concat({
                     components.get_mode(),
                     components.get_filename and components.get_filename(false) or "",
-                    components.get_git_branch and components.get_git_branch() or "",
-                    components.get_git_diff and components.get_git_diff() or "",
+                    components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
+                    components.get_git_diff and is_working_directory_same() and components.get_git_diff() or "",
                     colors.active,
                     '%=',
                     components.get_active_clients and components.get_active_clients() or "",
