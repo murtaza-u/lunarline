@@ -9,8 +9,11 @@ local function set(components)
     function Set(focus)
         local is_working_directory_same = require('lunarline.utils.working_dir')
         if focus == 'active' then
-            if vim.bo.filetype == 'netrw' or vim.bo.filetype == "NvimTree" then
+            local filetype = vim.bo.filetype
+            if filetype == 'netrw' or filetype == "NvimTree" then
                 return Set('filetree')
+            elseif filetype == 'help' then
+                return Set('inactive')
             end
 
             if trunc_req() then
