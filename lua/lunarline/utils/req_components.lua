@@ -1,7 +1,7 @@
 local all_components = {
     filename = 'filename',
     git_branch = 'git_branch',
-    git_diff = 'git_diff',
+    -- git_diff = 'git_diff',
     active_clients = 'active_clients',
     diagnostics = 'lsp_diagnostics',
     cursor_position = 'cursor_position',
