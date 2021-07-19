@@ -1,7 +1,10 @@
 local function main(path)
-    local trunc_home = require('lunarline.utils.trunc_home')
-    local chunks = trunc_home(path, true)
-    if chunks == path then
+    if path == nil then
+        path = vim.fn.expand("%f")
+    end
+    local split = require('lunarline.utils.split')
+    local chunks = split(path, '/')
+    if chunks == nil then
         return path
     end
 

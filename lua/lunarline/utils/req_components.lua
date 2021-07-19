@@ -9,14 +9,14 @@ local all_components = {
 }
 
 local function main(options)
-    local filename_option = nil
+    local filename_options = nil
     local is_git_repo = require('lunarline.utils.git')
     local components = {}
     components.get_mode = require('lunarline.components.mode')
 
     for key, _ in pairs(all_components) do
-        if key == 'filename' then
-            filename_option = options[key]
+        if key == 'filename' and type(options[key]) == "table" then
+            filename_options = options[key]
         end
         local new_key = "get_" .. key
         if options == nil then
@@ -33,7 +33,7 @@ local function main(options)
         ::continue::
     end
 
-    return components, filename_option
+    return components, filename_options
 end
 
 return main

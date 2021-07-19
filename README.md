@@ -66,7 +66,13 @@ local palette = {
 require('lunarline').setup({
     -- enable/disable components
     options = {
-        filename = true, -- possible values: true, false, 'truncate', 'tail'
+        -- filename = false,
+        filename = {
+            relative_path = true,
+            full_path = false,
+            truncate_path = true,
+            tail_only = false,
+        },
         git_branch = true,
         active_clients = false,
         diagnostics = true,
