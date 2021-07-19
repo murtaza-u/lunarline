@@ -23,6 +23,7 @@ local function set(components, filename_option)
                 return table.concat({
                     components.get_mode(),
                     components.get_filename and components.get_filename(true, filename_option) or "",
+                    '%=',
                     components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
                 }, ' ')
             else
@@ -45,6 +46,7 @@ local function set(components, filename_option)
             return colors.inactive
         end
     end
+
     vim.api.nvim_exec([[
     augroup Statusline
     au!

@@ -26,10 +26,10 @@ local function main(path, return_split)
         return trunc_home(path, 'home', return_split)
     elseif vim.fn.has('mac') == 1 then
         return trunc_home(path, 'Users', return_split)
-    elseif return_split then
-        return split(path, '/')
+    elseif vim.fn.has("windows") == 1 then
+        if return_split then return split(path, '\\') else return path end
     else
-        return path
+        if return_split then return split(path, '/') else return path end
     end
 end
 
