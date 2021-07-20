@@ -6,6 +6,7 @@ local all_components = {
     diagnostics = 'lsp_diagnostics',
     cursor_position = 'cursor_position',
     line_col = 'line_col',
+    virtual_env = 'virtual_env',
 }
 
 local function main(options)
