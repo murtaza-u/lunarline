@@ -4,13 +4,12 @@ local function get_filename(trunc_req, options)
     local icon = require('nvim-web-devicons').get_icon(file_name, file_ext, {default = true})
     if not trunc_req then
         local trunc_home = require('lunarline.utils.trunc_home')
+        local relative_path = require('lunarline.utils.relative_path')
         if options == nil then
-            local relative_path = require('lunarline.utils.relative_path')
             file_name = relative_path()
         else
-            file_name = vim.fn.expand("%:p")
+            file_name = vim.fn.expand("%f")
             if options['relative_path'] then
-                local relative_path = require("lunarline.utils.relative_path")
                 file_name = relative_path(file_name)
                 file_name = trunc_home(file_name)
             end

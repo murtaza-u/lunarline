@@ -3,9 +3,9 @@ local function get_new_path(chunks, path_delimeter)
     for i = 1, #chunks do
         if i ~= #chunks then
             if chunks[i]:sub(1, 1) == '.' then
-                new_path = new_path .. chunks[i] .. "/"
+                new_path = new_path .. chunks[i] .. path_delimeter
             else
-                new_path = new_path .. chunks[i]:sub(1, 1) .. "/"
+                new_path = new_path .. chunks[i]:sub(1, 1) .. path_delimeter
             end
         else
             new_path = new_path .. chunks[i]
