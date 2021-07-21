@@ -22,10 +22,10 @@ local function main(path)
     local chunks = split(path, '/')
     if chunks == nil then
         return path
-    elseif vim.fn.has("windows") then
-        return get_new_path(chunks, "\\")
     elseif vim.fn.has("unix") or vim.fn.has("max") then
         return get_new_path(chunks, "/")
+    elseif vim.fn.has("windows") then
+        return get_new_path(chunks, "\\")
     end
 end
 

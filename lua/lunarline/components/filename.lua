@@ -9,6 +9,7 @@ local function get_filename(trunc_req, options)
             file_name = relative_path()
         else
             file_name = vim.fn.expand("%f")
+
             if options['relative_path'] then
                 file_name = relative_path(file_name)
                 file_name = trunc_home(file_name)
