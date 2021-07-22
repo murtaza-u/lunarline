@@ -30,7 +30,7 @@ local function get_filename(trunc_req, options)
             end
         end
     end
-    return string.format("%s%s %s ", color, icon, file_name)
+    return string.format("%s%s %s", color, icon, file_name)
 end
 
 return get_filename

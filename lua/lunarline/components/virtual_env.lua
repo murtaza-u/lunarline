@@ -8,7 +8,8 @@ local function main()
         else
             chunks = split(VIRTUAL_ENV, '\\')
         end
-        return string.format("(%s)", chunks[#chunks])
+        local color = "%#virtual_env#"
+        return string.format("%s(%s)", color, chunks[#chunks])
     end
     return ""
 end

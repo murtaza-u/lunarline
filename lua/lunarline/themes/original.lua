@@ -44,4 +44,5 @@ return {
     },
     cursor_position = {fg = colors.light_blue, bg = colors.black},
     line_col = {fg = colors.light_blue, bg = colors.black},
+    virtual_env = {fg = colors.yellow, bg = colors.black},
 }

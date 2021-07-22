@@ -118,6 +118,7 @@ require('lunarline').setup({
         },
         cursor_position = {fg = palette.light_blue, bg = palette.black},
         line_col = {fg = palette.light_blue, bg = palette.black},
+        virtual_env = {fg = palette.yellow, bg = palette.black},
     }
 })
 ```
