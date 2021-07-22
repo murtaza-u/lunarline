@@ -14,6 +14,7 @@ Out of the box
     * active clients
     * file percentage
     * line column
+    * python virtualenv
 * Option to disable components which you think are of little use to you.
 
 
@@ -124,7 +125,7 @@ require('lunarline').setup({
 
 # TODO
 - [x] Git diff
-- [ ] python virtualenv
+- [x] python virtualenv
 
 
 # Issues
