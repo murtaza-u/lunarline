@@ -32,7 +32,10 @@ Out of the box
 # Installation
 * packer
 ```lua
-use 'Murtaza-Udaipurwala/lunarline.nvim'
+use {
+    'Murtaza-Udaipurwala/lunarline.nvim',
+    after = "<colorscheme>", -- replace <colorscheme> with colorscheme name. Eg: darkplus.nvim
+}
 use 'kyazdani42/nvim-web-devicons'
 ```
 
@@ -73,6 +76,7 @@ require('lunarline').setup({
             truncate_path = true,
             tail_only = false,
         },
+        virtual_env = true,
         git_branch = true,
         active_clients = false,
         diagnostics = true,
@@ -97,6 +101,7 @@ require('lunarline').setup({
             }
         },
         filename = {fg = palette.purple, bg = palette.black},
+        virtual_env = {fg = palette.yellow, bg = palette.black},
         git_branch = {fg = palette.green, bg = palette.black, style = "bold"},
         git_diff = {
             bg = colors.black,
@@ -117,7 +122,6 @@ require('lunarline').setup({
         },
         cursor_position = {fg = palette.light_blue, bg = palette.black},
         line_col = {fg = palette.light_blue, bg = palette.black},
-        virtual_env = {fg = palette.yellow, bg = palette.black},
     }
 })
 ```
@@ -126,6 +130,7 @@ require('lunarline').setup({
 # TODO
 - [x] Git diff
 - [x] python virtualenv
+- [ ] populate themes
 
 
 # Issues
