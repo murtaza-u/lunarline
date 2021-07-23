@@ -10,6 +10,7 @@ local function set(components, filename_option)
         local is_working_directory_same = require('lunarline.utils.working_dir')
         local cursor_position = components.get_cursor_position and components.get_cursor_position() or ""
         local line_col = components.get_line_col and components.get_line_col() or ""
+        local virtual_env = components.get_virtual_env and components.get_virtual_env() or ""
 
         if focus == 'active' then
             local filetype = vim.bo.filetype
@@ -30,7 +31,7 @@ local function set(components, filename_option)
                 return table.concat({
                     components.get_mode(),
                     components.get_filename and components.get_filename(false, filename_option) or "",
-                    components.get_virtual_env and components.get_virtual_env() or "",
+                    virtual_env,
                     components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
                     components.get_git_diff and vim.fn.filereadable(vim.fn.expand("%f")) == 1 and is_working_directory_same() and components.get_git_diff() or "",
                     colors.active,

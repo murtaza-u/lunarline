@@ -23,10 +23,14 @@ local function main(options)
         if options == nil then
             if (key == "git_diff" or key == "git_branch") and not is_git_repo then
                 goto continue
+            elseif key == 'virtual_env' and vim.fn.getenv("VIRTUAL_ENV") == vim.NIL then
+                goto continue
             end
             components[new_key] = require('lunarline.components.' .. key)
         elseif options[key] ~= false then
             if (key == "git_diff" or key == "git_branch") and not is_git_repo then
+                goto continue
+            elseif key == 'virtual_env' and vim.fn.getenv("VIRTUAL_ENV") == vim.NIL then
                 goto continue
             end
             components[new_key] = require('lunarline.components.' .. key)
