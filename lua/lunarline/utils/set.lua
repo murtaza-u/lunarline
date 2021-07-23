@@ -31,7 +31,9 @@ local function set(components, filename_option)
                 return table.concat({
                     components.get_mode(),
                     components.get_filename and components.get_filename(false, filename_option) or "",
+                    "%20-",
                     virtual_env,
+                    "%3-",
                     components.get_git_branch and is_working_directory_same() and components.get_git_branch() or "",
                     components.get_git_diff and vim.fn.filereadable(vim.fn.expand("%f")) == 1 and is_working_directory_same() and components.get_git_diff() or "",
                     colors.active,
