@@ -15,7 +15,8 @@ Out of the box
     * file percentage
     * line column
     * python virtualenv
-* Option to disable components which you think are of little use to you.
+3. Option to disable components which you think are of little use to you.
+4. No external dependencies on other plugins for features like git branch, git diffs, virtual environment.
 
 
 ## Requirements
@@ -24,8 +25,6 @@ Out of the box
 
 
 # Goals
-* Asynchronously load heavy components of the statusline.
-* No external dependencies on other plugins for features like git branch, git diffs, virtual environment.
 * Maintain a boundary between features and speed.
 * All famous themes will be included with Lunarline.
 
