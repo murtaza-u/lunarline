@@ -130,7 +130,7 @@ require('lunarline').setup({
 # TODO
 - [x] Git diff
 - [x] python virtualenv
-- [ ] populate themes
+- [ ] populate themes. Please make PRs' as the author is too lazy to do so(pun intended).
 
 
 # Issues
