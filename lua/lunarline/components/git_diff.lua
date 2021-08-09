@@ -20,8 +20,8 @@ local function get_git_diff()
             removed = "%#removedLines#",
         }
         return string.format("%s %s",
-                             chunks[1] ~= "0" and colors.added .. "[+" .. chunks[1] .. "]" or "",
-                             chunks[2] ~= "0" and colors.removed .. "[-" .. chunks[2] .. "]" or "")
+                             chunks[1] ~= "0" and colors.added .. " " .. chunks[1] or "",
+                             chunks[2] ~= "0" and colors.removed .. " " .. chunks[2] or "")
     end
     return ""
 end
