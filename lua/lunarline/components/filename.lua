@@ -30,6 +30,11 @@ local function get_filename(trunc_req, options)
             end
         end
     end
+
+    if vim.api.nvim_buf_get_option(0, "modified") then
+        file_name = file_name .. "[+]"
+    end
+
     return string.format("%s%s %s", color, icon, file_name)
 end
 
