@@ -33,9 +33,12 @@ Out of the box
 * packer
 ```lua
 use {
-    'Murtaza-Udaipurwala/lunarline.nvim',
-    after = "<colorscheme>", -- replace <colorscheme> with colorscheme name. Eg: darkplus.nvim
+    'Murtaza-Udaipurwala/lunarline',
+    requires = {'kyazdani42/nvim-web-devicons'},
+    after = "<colorscheme>", -- replace <colorscheme> with colorscheme name. Eg: gruvbox
+    -- config = [[require('plugins.lunarline')]],
 }
+
 use 'kyazdani42/nvim-web-devicons'
 ```
 
